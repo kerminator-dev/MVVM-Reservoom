@@ -11,6 +11,11 @@ namespace Reservoom.Models
     {
         private readonly List<Reservation> _reservations;
 
+        public IEnumerable<Reservation> Reservations
+        {
+            get => _reservations;
+        }
+
         public ReservationBook()
         {
             _reservations = new List<Reservation>();

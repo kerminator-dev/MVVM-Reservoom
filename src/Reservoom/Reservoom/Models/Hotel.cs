@@ -9,6 +9,12 @@ namespace Reservoom.Models
     public class Hotel
     {
         private readonly ReservationBook _reservationBook;
+
+        public IEnumerable<Reservation> Reservations
+        {
+            get => _reservationBook.Reservations;
+        }
+
         public string Name { get; }
         public Hotel(string name)
         {
