@@ -25,7 +25,6 @@ C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\R
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Reservoom.dll
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\ref\Reservoom.dll
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Reservoom.pdb
-C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom.csproj.AssemblyReference.cache
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\MakeReservationView.g.cs
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\ReservationListingView.g.cs
@@ -33,6 +32,7 @@ C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\R
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom_MarkupCompile.cache
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom_MarkupCompile.lref
+C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\App.baml
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\MakeReservationView.baml
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\ReservationListingView.baml
@@ -45,4 +45,3 @@ C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\R
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\ref\Reservoom.dll
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom.pdb
 C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom.genruntimeconfig.cache
-C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\App.baml

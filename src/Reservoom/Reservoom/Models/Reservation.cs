@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Reservoom.Models
 {
@@ -10,17 +6,17 @@ namespace Reservoom.Models
     {
         public RoomID RoomID { get; }
         public string Username { get; }
-        public DateTime StartTime { get; }
-        public DateTime EndTime { get; }
+        public DateTime StartDate { get; }
+        public DateTime EndDate { get; }
 
-        public TimeSpan Length => EndTime - StartTime;
+        public TimeSpan Length => EndDate - StartDate;
 
-        public Reservation(RoomID roomID, string usernmae, DateTime startTime, DateTime endTime)
+        public Reservation(RoomID roomID, string usernmae, DateTime startDate, DateTime endDate)
         {
             RoomID = roomID;
             Username = usernmae;
-            StartTime = startTime;
-            EndTime = endTime;
+            StartDate = startDate;
+            EndDate = endDate;
         }
 
         internal bool Conflicts(Reservation reservation)
@@ -28,7 +24,7 @@ namespace Reservoom.Models
             if (reservation.RoomID != RoomID)
                 return true;
 
-            return reservation.StartTime > EndTime;
+            return reservation.StartDate > EndDate;
         }
     }
 }

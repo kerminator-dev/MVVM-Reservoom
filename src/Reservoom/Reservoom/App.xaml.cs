@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Reservoom.ViewModels;
+using System.Windows;
 
 namespace Reservoom
 {
@@ -9,6 +10,12 @@ namespace Reservoom
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel()
+            };
+            MainWindow.Show();
+
             base.OnStartup(e);
         }
     }

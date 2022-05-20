@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Reservoom.Views"
+             xmlns:local="clr-namespace:Reservoom.Views" xmlns:viewmodels="clr-namespace:Reservoom.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ReservationListingViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -23,19 +23,14 @@
                        Text="View Reservations"/>
 
             <Button Grid.Column="1"
+                    Command="{Binding MakeReservationCommand}"
                     Margin="10 0 0 0"
                     Content="Make Reservation"/>
         </Grid>
 
         <ListView Grid.Row="1"
-                  Margin="0 25 0 0">
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
+                  Margin="0 25 0 0"
+                  ItemsSource="{Binding Reservations}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -46,7 +41,7 @@
                     <GridViewColumn Header="Room ID">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="12"/>
+                                <TextBlock Text="{Binding RoomID}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -54,23 +49,23 @@
                     <GridViewColumn Header="Username">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="John"/>
+                                <TextBlock Text="{Binding Username}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Start Date">
+                    <GridViewColumn Header="Start Time">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="01/20/2021"/>
+                                <TextBlock Text="{Binding StartDate}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="End Date">
+                    <GridViewColumn Header="End Time">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="01/22/2021"/>
+                                <TextBlock Text="{Binding EndDate}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
