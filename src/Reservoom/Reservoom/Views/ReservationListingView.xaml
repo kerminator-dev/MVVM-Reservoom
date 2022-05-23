@@ -23,6 +23,7 @@
                        Text="View Reservations"/>
 
             <Button Grid.Column="1"
+                    Style="{StaticResource DefaultButtonStyle}"
                     Command="{Binding MakeReservationCommand}"
                     Margin="10 0 0 0"
                     Content="Make Reservation"/>

@@ -1,5 +1,6 @@
 ﻿using Reservoom.Exceptions;
 using Reservoom.Models;
+using Reservoom.Services;
 using Reservoom.ViewModels;
 using System.Windows;
 
@@ -9,13 +10,17 @@ namespace Reservoom.Commands
     {
         private readonly Hotel _hotel;
         private readonly MakeReservationViewModel _makeReservationViewModel;
+        private readonly NavigationService _reservationViewNavigationService;
 
-        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, Hotel hotel)
+        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel,
+                                      Hotel hotel,
+                                      NavigationService reservationViewNavigationService)
         {
             _makeReservationViewModel = makeReservationViewModel;
             _hotel = hotel;
 
             _makeReservationViewModel.PropertyChanged += OnViewModelPropertyChanged;
+            _reservationViewNavigationService = reservationViewNavigationService;
         }
 
         private void OnViewModelPropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -37,7 +42,7 @@ namespace Reservoom.Commands
             (
                 roomID: new RoomID
                 (
-                    floorNumber: _makeReservationViewModel.FloorNumber, 
+                    floorNumber: _makeReservationViewModel.FloorNumber,
                     roomNumber: _makeReservationViewModel.RoomNumber
                 ),
                 usernmae: _makeReservationViewModel.Username,
@@ -56,18 +61,20 @@ namespace Reservoom.Commands
                     button: MessageBoxButton.OK,
                     icon: MessageBoxImage.Information
                 );
+
+                _reservationViewNavigationService.Navigate();
             }
             catch (ReservationConflictException)
             {
                 MessageBox.Show
                 (
-                    messageBoxText: "Неверно указаны данные!", 
-                    caption: "Ошибка", 
-                    button: MessageBoxButton.OK, 
+                    messageBoxText: "Неверно указаны данные!",
+                    caption: "Ошибка",
+                    button: MessageBoxButton.OK,
                     icon: MessageBoxImage.Error
                 );
             }
-            
+
         }
     }
 }

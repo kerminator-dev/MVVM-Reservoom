@@ -3,13 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Reservoom">
     <Application.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Padding" Value="10 5"/>
-            <Setter Property="BorderThickness" Value="0"/>
+        <!-- Кнопка -->
+        <Style TargetType="Button" x:Key="DefaultButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Border x:Name="border" 
+                                    CornerRadius="14" 
+                                    BorderBrush="White" 
+                                    Background="#556ee6"
+                                    BorderThickness="0"
+                                    Padding="15 6">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      TextElement.FontWeight="Normal">
+                                </ContentPresenter>
+                            </Border>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#778beb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+            <Setter Property="FontSize" Value="16"/>
+            
+            <Setter Property="Button.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="LightGray"  Direction="-90" ShadowDepth="4" BlurRadius="5" Opacity="0.5" />
+                </Setter.Value>
+            </Setter>
         </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Padding" Value="10 5"/>
-        </Style>
+
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBox}">
+            <Border Background="{TemplateBinding Background}" 
+                    Padding="{TemplateBinding Padding}"
+                    x:Name="Bd" 
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    CornerRadius="12">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsFocused" Value="True" >
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#778beb" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!-- Текстовый блок / шапка -->
         <Style TargetType="TextBlock" x:Key="HeaderStyle">
             <Setter Property="FontSize" Value="24"/>
         </Style>

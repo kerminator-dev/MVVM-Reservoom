@@ -23,6 +23,11 @@ namespace Reservoom.Models
             return _reservations.Where(r => r.Username == username);
         }
 
+        public IEnumerable<Reservation> GetAllReservations()
+        {
+            return _reservations.AsReadOnly();
+        }
+
         public void AddReservation(Reservation reservation)
         {
             foreach (Reservation existingReservation in _reservations)

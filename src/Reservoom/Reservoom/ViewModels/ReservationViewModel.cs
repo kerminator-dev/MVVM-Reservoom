@@ -1,5 +1,4 @@
 ﻿using Reservoom.Models;
-using System;
 
 namespace Reservoom.ViewModels
 {
