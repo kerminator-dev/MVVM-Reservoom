@@ -2,11 +2,13 @@
 using Reservoom.Models;
 using Reservoom.Services;
 using Reservoom.ViewModels;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Reservoom.Commands
 {
-    public class MakeReservationCommand : CommandBase
+    public class MakeReservationCommand : AsyncCommandBase
     {
         private readonly Hotel _hotel;
         private readonly MakeReservationViewModel _makeReservationViewModel;
@@ -36,7 +38,7 @@ namespace Reservoom.Commands
             return !string.IsNullOrEmpty(_makeReservationViewModel.Username) && base.CanExecute(parameter);
         }
 
-        public override void Execute(object? parameter)
+        public async override Task ExecuteAsync(object? parameter)
         {
             var reservation = new Reservation
             (
@@ -52,7 +54,7 @@ namespace Reservoom.Commands
 
             try
             {
-                _hotel.MakeReservation(reservation);
+                await _hotel.MakeReservation(reservation);
 
                 MessageBox.Show
                 (
@@ -69,6 +71,16 @@ namespace Reservoom.Commands
                 MessageBox.Show
                 (
                     messageBoxText: "Неверно указаны данные!",
+                    caption: "Ошибка",
+                    button: MessageBoxButton.OK,
+                    icon: MessageBoxImage.Error
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show
+                (
+                    messageBoxText: "Ошибка при создании бронирования!",
                     caption: "Ошибка",
                     button: MessageBoxButton.OK,
                     icon: MessageBoxImage.Error
