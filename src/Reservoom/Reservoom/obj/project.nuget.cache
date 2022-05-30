@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yf4Zwdg7S0bneXvZwYaK03o5Qv/gFzc0txQoiSEcOnqz7Byz/K7CDWCWmDowHSHsiRuH2vbIxmzv4MOxeWu/kg==",
+  "dgSpecHash": "Uh620aFOuZeTE6NI5Wxo9lWjF+yVWl6+DElN4osfZIVamZyqPpXrTVlKyeK9DQRfAMoUzH2k60QU2o+EbCwJaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
+  "projectFilePath": "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.5\\microsoft.data.sqlite.core.6.0.5.nupkg.sha512",

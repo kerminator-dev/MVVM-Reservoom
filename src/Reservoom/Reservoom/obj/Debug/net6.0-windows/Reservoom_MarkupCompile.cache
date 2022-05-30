@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\
+C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\
 Reservoom
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\525.khokhlovns\source\repos\NotesAppRepo\MVVM-Reservoom\src\Reservoom\Reservoom\App.xaml
+C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\App.xaml
 3-651115779
 
-351743341456
+3690685879
 212856195802
 MainWindow.xaml;Views\MakeReservationView.xaml;Views\ReservationListingView.xaml;
 

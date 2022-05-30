@@ -11,6 +11,9 @@ namespace Reservoom.Stores
             get => _currentViewModel;
             set
             {
+                // Уничтожение прошлой ViewModel
+                _currentViewModel?.Dispose();
+
                 _currentViewModel = value;
                 OnCurrentViewModelChanged();
             }

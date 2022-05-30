@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\Reservoom.csproj": {}
+    "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\Reservoom.csproj": {
+    "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
+        "projectUniqueName": "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
         "projectName": "Reservoom",
-        "projectPath": "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
+        "projectPath": "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
         "packagesPath": "C:\\Users\\525.khokhlovns\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\525.khokhlovns\\source\\repos\\NotesAppRepo\\MVVM-Reservoom\\src\\Reservoom\\Reservoom\\obj\\",
+        "outputPath": "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\525.khokhlovns\\AppData\\Roaming\\NuGet\\NuGet.Config",

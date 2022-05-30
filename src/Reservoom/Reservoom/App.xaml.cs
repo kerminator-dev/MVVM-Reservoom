@@ -19,6 +19,7 @@ namespace Reservoom
         private const string CONNECTION_STRING = "Data Source=reservoom.db";
         private readonly Hotel _hotel;
         private readonly NavigationStore _navigationStore;
+        private readonly HotelStore _hotelStore;
         private readonly ReservoomDBContextFactory _reservoomDBContextFactory;
         public App()
         {
@@ -30,6 +31,7 @@ namespace Reservoom
 
             ReservationBook reservationBook = new ReservationBook(reservationProvider, reservationCreator, reservationConflictValidator);
             _hotel = new Hotel("Hotel 1232", reservationBook);
+            _hotelStore = new HotelStore(_hotel);
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
@@ -39,7 +41,7 @@ namespace Reservoom
                 dbContext.Database.Migrate();
             }
 
-            _navigationStore.CurrentViewModel = CreateMakeReservation();
+            _navigationStore.CurrentViewModel = CreateReservationViewModel();
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)
@@ -49,14 +51,14 @@ namespace Reservoom
             base.OnStartup(e);
         }
 
-        private MakeReservationViewModel CreateMakeReservation()
+        private MakeReservationViewModel CreateMakeReservationViewModel()
         {
-            return new MakeReservationViewModel(_hotel, new NavigationService(_navigationStore, CreateReservationViewModel));
+            return new MakeReservationViewModel(_hotelStore, new NavigationService(_navigationStore, CreateReservationViewModel));
         }
 
         private ReservationListingViewModel CreateReservationViewModel()
         {
-            return ReservationListingViewModel.LoadViewModel(_hotel, new NavigationService(_navigationStore, CreateMakeReservation));
+            return ReservationListingViewModel.LoadViewModel(_hotelStore, new NavigationService(_navigationStore, CreateMakeReservationViewModel));
         }
     }
 }
