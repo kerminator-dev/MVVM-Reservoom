@@ -11,7 +11,7 @@ namespace Reservoom.Stores
     {
         private List<Reservation> _reservations;
         private Hotel _hotel;
-        private readonly Lazy<Task> _initalizeLazy;
+        private Lazy<Task> _initalizeLazy;
 
         public IEnumerable<Reservation> Reservations => _reservations;
         public event Action<Reservation> ReservationMade;
@@ -39,7 +39,15 @@ namespace Reservoom.Stores
 
         public async Task Load()
         {
-            await _initalizeLazy.Value;
+            try
+            {
+                await _initalizeLazy.Value;
+            }
+            catch (Exception ex)
+            {
+                _initalizeLazy = new Lazy<Task>(Initialize);
+                throw;
+            }
         }
 
         private async Task Initialize()

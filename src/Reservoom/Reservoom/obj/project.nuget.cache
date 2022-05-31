@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Uh620aFOuZeTE6NI5Wxo9lWjF+yVWl6+DElN4osfZIVamZyqPpXrTVlKyeK9DQRfAMoUzH2k60QU2o+EbCwJaQ==",
+  "dgSpecHash": "uGr4vk5/uTIfaULiiaAh8aWPeszhTSzZpjcD1ceL5cjn6UQZxPYZKNDx3U+piO/hkr0nMDQxEBwvO+fDHMuw7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\525.khokhlovns\\source\\repos\\MVVM\\src\\Reservoom\\Reservoom\\Reservoom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\525.khokhlovns\\.nuget\\packages\\loadingspinner.wpf\\1.0.0\\loadingspinner.wpf.1.0.0.nupkg.sha512",
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.5\\microsoft.data.sqlite.core.6.0.5.nupkg.sha512",
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "C:\\Users\\525.khokhlovns\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",

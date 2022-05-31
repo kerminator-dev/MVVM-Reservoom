@@ -89,6 +89,7 @@ C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\ref\Reservoom.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Reservoom.pdb
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\LoadingSpinnerControl.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Microsoft.Data.Sqlite.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -123,7 +124,6 @@ C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\bin\Debug\net6.0-windows\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Reservoom.csproj.AssemblyReference.cache
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\MakeReservationView.g.cs
 C:\Users\525.khokhlovns\source\repos\MVVM\src\Reservoom\Reservoom\obj\Debug\net6.0-windows\Views\ReservationListingView.g.cs

@@ -12,7 +12,32 @@ namespace Reservoom.ViewModels
     {
         private readonly ObservableCollection<ReservationViewModel> _reservations;
         private readonly HotelStore _hotelStore;
+        private string _errorMessage;
+        private bool _isLoading = false;
 
+        public string ErrorMessage
+        {
+            get => _errorMessage;
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
+
+                OnPropertyChanged(nameof(HasErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(_errorMessage);
+        
+        public bool IsLoading
+        {
+            get => _isLoading;
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
+            }
+        }
         public IEnumerable<ReservationViewModel> Reservations => _reservations;
         public ICommand LoadReservationsCommand { get; }
         public ICommand MakeReservationCommand { get; }

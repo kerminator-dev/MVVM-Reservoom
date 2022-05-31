@@ -3,17 +3,24 @@ using Reservoom.Models;
 using Reservoom.Services;
 using Reservoom.Stores;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace Reservoom.ViewModels
 {
-    public class MakeReservationViewModel : ViewModelBase
+    public class MakeReservationViewModel : ViewModelBase, INotifyDataErrorInfo
     {
         private string _username = string.Empty;
         private int _floorNumber;
         private int _roomNumber;
         private DateTime _startDate = new DateTime(DateTime.Now.Year, 1, 1);
         private DateTime _endDate = new DateTime(DateTime.Now.Year, 1, 2);
+        private Dictionary<string, List<string>> _propertyNameToErrorsDictionary;
+        
+        public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
 
         public string Username
         {
@@ -52,6 +59,15 @@ namespace Reservoom.ViewModels
             {
                 _startDate = value;
                 OnPropertyChanged(nameof(StartDate));
+
+                
+                ClearErrors(nameof(StartDate));
+                ClearErrors(nameof(EndDate));
+
+                if (EndDate < StartDate)
+                {
+                    AddErrorToProperty(nameof(EndDate), "Дата начала не может быть после даты окончания.");
+                }
             }
         }
 
@@ -62,6 +78,13 @@ namespace Reservoom.ViewModels
             {
                 _endDate = value;
                 OnPropertyChanged(nameof(EndDate));
+
+                ClearErrors(nameof(EndDate));
+                
+                if (EndDate < StartDate)
+                {
+                    AddErrorToProperty(nameof(EndDate), "Дата окончания не может быть до даты начала.");
+                }
             }
         }
 
@@ -69,10 +92,41 @@ namespace Reservoom.ViewModels
 
         public ICommand CancelCommand { get; }
 
+        public bool HasErrors => _propertyNameToErrorsDictionary.Any();
+
         public MakeReservationViewModel(HotelStore hotelStore, NavigationService reservationViewNavigationService)
         {
+            _propertyNameToErrorsDictionary = new Dictionary<string, List<string>>();
             SubmitCommand = new MakeReservationCommand(this, hotelStore, reservationViewNavigationService);
             CancelCommand = new NavigateCommand(reservationViewNavigationService);
+        }
+
+        private void ClearErrors(string propertyName)
+        {
+            _propertyNameToErrorsDictionary.Remove(propertyName);
+            OnErrorsChanged(propertyName);
+        }
+
+        private void OnErrorsChanged(string propertyName)
+        {
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+        }
+
+        private void AddErrorToProperty(string propertyName, string errorMessage)
+        {
+            if (!_propertyNameToErrorsDictionary.ContainsKey(propertyName))
+            {
+                _propertyNameToErrorsDictionary.Add(propertyName, new List<string>());
+            }
+
+            _propertyNameToErrorsDictionary[propertyName].Add(errorMessage);
+
+            OnErrorsChanged(nameof(propertyName));
+        }
+
+        public IEnumerable GetErrors(string? propertyName)
+        {
+            return _propertyNameToErrorsDictionary.GetValueOrDefault(propertyName, new List<string>());
         }
     }
 }
