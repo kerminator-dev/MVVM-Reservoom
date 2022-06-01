@@ -1,10 +1,7 @@
-﻿using Reservoom.Models;
-using Reservoom.Stores;
+﻿using Reservoom.Stores;
 using Reservoom.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace Reservoom.Commands
 {
@@ -34,7 +31,7 @@ namespace Reservoom.Commands
                 _viewModel.ErrorMessage = "Ошибка при загрузке бронирования";
             }
 
-             _viewModel.IsLoading = false;
+            _viewModel.IsLoading = false;
 
         }
     }

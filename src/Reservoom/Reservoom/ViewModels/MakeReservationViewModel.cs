@@ -1,5 +1,4 @@
 ﻿using Reservoom.Commands;
-using Reservoom.Models;
 using Reservoom.Services;
 using Reservoom.Stores;
 using System;
@@ -19,7 +18,7 @@ namespace Reservoom.ViewModels
         private DateTime _startDate = new DateTime(DateTime.Now.Year, 1, 1);
         private DateTime _endDate = new DateTime(DateTime.Now.Year, 1, 2);
         private Dictionary<string, List<string>> _propertyNameToErrorsDictionary;
-        
+
         public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
 
         public string Username
@@ -60,7 +59,7 @@ namespace Reservoom.ViewModels
                 _startDate = value;
                 OnPropertyChanged(nameof(StartDate));
 
-                
+
                 ClearErrors(nameof(StartDate));
                 ClearErrors(nameof(EndDate));
 
@@ -80,7 +79,7 @@ namespace Reservoom.ViewModels
                 OnPropertyChanged(nameof(EndDate));
 
                 ClearErrors(nameof(EndDate));
-                
+
                 if (EndDate < StartDate)
                 {
                     AddErrorToProperty(nameof(EndDate), "Дата окончания не может быть до даты начала.");
@@ -94,11 +93,11 @@ namespace Reservoom.ViewModels
 
         public bool HasErrors => _propertyNameToErrorsDictionary.Any();
 
-        public MakeReservationViewModel(HotelStore hotelStore, NavigationService reservationViewNavigationService)
+        public MakeReservationViewModel(HotelStore hotelStore, NavigationService<ReservationListingViewModel> reservationViewNavigationService)
         {
             _propertyNameToErrorsDictionary = new Dictionary<string, List<string>>();
             SubmitCommand = new MakeReservationCommand(this, hotelStore, reservationViewNavigationService);
-            CancelCommand = new NavigateCommand(reservationViewNavigationService);
+            CancelCommand = new NavigateCommand<ReservationListingViewModel>(reservationViewNavigationService);
         }
 
         private void ClearErrors(string propertyName)

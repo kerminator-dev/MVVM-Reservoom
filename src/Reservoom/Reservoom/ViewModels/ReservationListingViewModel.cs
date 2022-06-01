@@ -28,7 +28,7 @@ namespace Reservoom.ViewModels
         }
 
         public bool HasErrorMessage => !string.IsNullOrEmpty(_errorMessage);
-        
+
         public bool IsLoading
         {
             get => _isLoading;
@@ -43,13 +43,13 @@ namespace Reservoom.ViewModels
         public ICommand MakeReservationCommand { get; }
 
         public ReservationListingViewModel(HotelStore hotelStore,
-                                           NavigationService makeReservationNavigationService)
+                                           NavigationService<MakeReservationViewModel> makeReservationNavigationService)
         {
             _hotelStore = hotelStore;
             _reservations = new ObservableCollection<ReservationViewModel>();
 
             LoadReservationsCommand = new LoadReservationsCommand(this, hotelStore);
-            MakeReservationCommand = new NavigateCommand(makeReservationNavigationService);
+            MakeReservationCommand = new NavigateCommand<MakeReservationViewModel>(makeReservationNavigationService);
 
             _hotelStore.ReservationMade += OnReservationMade;
         }
@@ -67,7 +67,7 @@ namespace Reservoom.ViewModels
         }
 
         public static ReservationListingViewModel LoadViewModel(HotelStore hotelStore,
-                                                                NavigationService makeReservationNavigationService)
+                                                                NavigationService<MakeReservationViewModel> makeReservationNavigationService)
         {
             ReservationListingViewModel viewModel = new ReservationListingViewModel(hotelStore, makeReservationNavigationService);
             viewModel.LoadReservationsCommand.Execute(null);
